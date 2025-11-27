@@ -1,0 +1,50 @@
+.modalBody {
+  padding: 30px 25px;
+  background-color: var(--modalbackgroundcolor);
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+}
+
+.formLabel {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--fontLabelClient);
+}
+
+.addButton {
+  border: var(--commoncolor) 1px solid;
+
+}
+
+.createButton {
+  background-color: var(--commoncolor);
+  color: var(--colorWhite);
+}
+
+.createButton:hover {
+  background-color: var(--btnhover);
+  color: var(--colorWhite);
+}
+
+.requiredIndicator {
+  color: var(--requiredcolor);
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+
+.formFeedback {
+  font-size: 11px !important;
+}
+
+@media (max-width: 768px) {
+  .modalBody {
+    padding: 15px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}

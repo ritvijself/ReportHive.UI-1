@@ -1,0 +1,133 @@
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+.modalContent {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.modalHeader h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.closeButton {
+    background: none; border: none; font-size: 2rem; cursor: pointer; color: #aaa;
+}
+
+.privacy-notice {
+    background-color: #e8f0fe;
+    color: #1967d2;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+.privacy-notice p { margin: 0; }
+
+.form-body {
+    display: flex;
+    gap: 1.5rem;
+}
+.doc-icon {
+    width: 48px;
+    height: 64px;
+    object-fit: contain;
+    margin-top: 0.5rem;
+}
+.form-fields {
+    flex-grow: 1;
+}
+.form-fields label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.form-fields input[type="text"], .form-fields input[type="url"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: normal;
+}
+
+.notes-editor {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+.tiptap-toolbar {
+    background: #f7f7f7;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+.tiptap-toolbar button {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.2rem;
+}
+.tiptap-toolbar button.is-active {
+    background: #e0e0e0;
+}
+.prose-mirror-editor {
+    min-height: 100px;
+    padding: 0.75rem;
+    outline: none;
+}
+.prose-mirror-editor p {
+    margin: 0;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+.saveButton, .cancelButton {
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+.saveButton { background-color: #1a73e8; color: white; }
+.cancelButton { background-color: #f1f3f4; color: #3c4043; border: 1px solid #dadce0;}

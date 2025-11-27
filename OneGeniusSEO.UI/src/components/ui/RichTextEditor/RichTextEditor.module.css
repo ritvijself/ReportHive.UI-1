@@ -1,0 +1,207 @@
+.container {
+  position: relative;
+  /* margin-bottom: 48px; */
+}
+
+.richTextEditor {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.richTextEditor :global(.toolbar) {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  border-radius: 5px 5px 0 0;
+  gap: 4px;
+}
+
+.richTextEditor :global(.toolbar-item) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+  min-width: 32px;
+  height: 32px;
+}
+
+.richTextEditor :global(.toolbar-item:hover) {
+  background-color: #e9ecef;
+  border-color: #d0d7de;
+}
+
+.richTextEditor :global(.toolbar-item.active) {
+  background-color: #0969da;
+  color: white;
+  border-color: #0969da;
+}
+
+.richTextEditor :global(.toolbar-item.spaced) {
+  margin-right: 2px;
+}
+
+.richTextEditor :global(.block-controls) {
+  padding: 6px 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.richTextEditor :global(.divider) {
+  width: 1px;
+  height: 24px;
+  background-color: #d0d7de;
+  margin: 0 8px;
+}
+
+.richTextEditor :global(.editor-inner) {
+  position: relative;
+  min-height: 200px;
+}
+
+.richTextEditor :global(.editor-input) {
+  padding: 12px !important;
+  border: none !important;
+  outline: none !important;
+  min-height: 200px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  font-family: inherit !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  writing-mode: horizontal-tb !important;
+  direction: ltr !important;
+  display: block !important;
+  text-align: left !important;
+}
+
+.richTextEditor :global(.editor-input p) {
+  margin: 0 0 1em 0 !important;
+  display: block !important;
+}
+
+.richTextEditor :global(.editor-input div) {
+  display: block !important;
+}
+
+.richTextEditor :global(.editor-placeholder) {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #999;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.richTextEditor :global(.editor-text-bold) {
+  font-weight: bold;
+}
+
+.richTextEditor :global(.editor-text-italic) {
+  font-style: italic;
+}
+
+.richTextEditor :global(.editor-text-underline) {
+  text-decoration: underline;
+}
+
+.richTextEditor :global(.editor-text-strikethrough) {
+  text-decoration: line-through;
+}
+
+.richTextEditor :global(.editor-heading-h1) {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.richTextEditor :global(.editor-heading-h2) {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.75em 0;
+}
+
+.richTextEditor :global(.editor-quote) {
+  border-left: 4px solid #ccc;
+  padding-left: 16px;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+}
+
+.richTextEditor :global(.editor-list-ol),
+.richTextEditor :global(.editor-list-ul) {
+  padding-left: 32px;
+  margin: 0;
+}
+
+.richTextEditor :global(.editor-listitem) {
+  margin: 8px 0;
+}
+
+.collapsed {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.richTextPreview {
+  border: 1px solid transparent;
+  padding: 8px 20px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+.richTextPreview:hover {
+  background-color: #f9f9f9;
+}
+
+.placeholder {
+  border: 1px dashed #ccc;
+  color: #999;
+  border-radius: 4px;
+  min-height: 100px;
+}
+
+.showMoreOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, white, transparent);
+}
+
+.showMoreLessButtonContainer {
+  position: absolute;
+  bottom: -36px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.showLessContainer {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+.navbar {
+  background-color: var(--background-color);
+  position: sticky;
+  /* Makes the navbar stick to the top while scrolling */
+  top: 0;
+  /* Aligns the navbar to the top of the viewport */
+  z-index: 1000;
+  /* Ensures the navbar stays above other content */
+  padding-bottom: 1rem;
+  /* Adds padding below the navbar */
+}
+
+.logout:active {
+  background-color: var(--commoncolor) !important;
+}
+
+.navbar .nav-link {
+  margin-left: 10px;
+  color: #555;
+}
+
+.navbar .nav-link:hover {
+  color: #000;
+}

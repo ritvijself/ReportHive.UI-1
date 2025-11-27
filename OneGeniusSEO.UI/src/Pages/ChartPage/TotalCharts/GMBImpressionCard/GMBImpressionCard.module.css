@@ -1,0 +1,15 @@
+
+.content {
+  line-height: 28px;
+}
+
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 600;
+}

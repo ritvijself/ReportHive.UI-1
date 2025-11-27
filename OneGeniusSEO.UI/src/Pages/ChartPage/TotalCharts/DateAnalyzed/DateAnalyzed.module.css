@@ -1,0 +1,33 @@
+/* SquareBox.module.css */
+.square_box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 200px;
+  /* Optional: Limit the width for responsiveness */
+}
+
+.square_box_title {
+  font-size: 9px;
+  font-weight: bold;
+  color: #bababa;
+  margin-bottom: 10px;
+
+}
+
+.metric_value_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.metric_value_container h3 {
+  font-size: 18px;
+}

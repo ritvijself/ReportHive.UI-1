@@ -1,0 +1,52 @@
+.uploadButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.uploadButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+.saveButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.saveButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+.addIntegrationsButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.addIntegrationsButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+:global(.accordion-button) {
+  background-color: #e8e8e8 !important;
+  color: grey !important;
+  font-weight: bold;
+  border: var(--bs-border-width) var(--bs-border-style) #020202 !important;
+
+}
+
+:global(.accordion-button:not(.collapsed)) {
+  background-color: #e8e8e8 !important;
+  color: grey !important;
+  font-weight: bold;
+}
+
+:global(.accordion-button:focus) {
+  box-shadow: none !important;
+}
+
+:global(.container-fluid .accordion .accordion-item) {
+  padding-bottom: 7px;
+  border-color: white !important;
+}

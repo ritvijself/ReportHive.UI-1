@@ -1,0 +1,131 @@
+.loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Background thoda aur dark */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* PDF loader icon ka style (Same as before) */
+.pdfLoader {
+  width: 80px;
+  height: 90px;
+  background-color: #e53935;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdfLoader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #c62828;
+}
+
+.pdfText {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.pdfLoader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; 
+  width: 70%;
+  height: 100%;
+  background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100% );
+  transform: skewX(-25deg);
+  animation: shimmer-effect 2s infinite linear;
+}
+
+@keyframes shimmer-effect {
+  100% {
+    left: 150%; 
+  }
+}
+
+/* Dots ka style (Same as before) */
+.dotsContainer {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.dotsContainer .dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dotsContainer .dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
+  }
+}
+
+
+/* ===== TEXT KE LIYE NAYA STYLISH ANIMATION ===== */
+.loaderText {
+  margin-top: 20px;
+  font-size: 1.5rem; /* Thoda bada text */
+  font-weight: 600; /* Thoda bold */
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  
+  /* 1. Colorful Gradient Background banaya */
+  background: linear-gradient(90deg, #ff00ff, #00ffea, #ffdd00, #ff00ff);
+  
+  /* 2. Background ko text ke size se bada kiya */
+  background-size: 300% 100%;
+  
+  /* 3. Sabse important: Background ko text ke shape mein clip kiya */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text;
+  
+  /* 4. Text ka original color transparent kar diya */
+  color: transparent;
+  
+  /* 5. Naya animation apply kiya jo background ko move karega */
+  animation: gradient-animation 5s linear infinite;
+}
+
+/* Naya keyframe jo background ki position ko animate karega */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

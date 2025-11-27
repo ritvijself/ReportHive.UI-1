@@ -1,0 +1,57 @@
+.cardTitle {
+  font-size: 16px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.highlightCell {
+  background-color: var(--highlihghtedCell) !important;
+  font-weight: bold;
+  color: #000;
+}
+
+.defaultCell {
+  background-color: transparent;
+  font-weight: normal;
+  color: black;
+}
+
+.tableHeader {
+  min-width: 150px;
+  background: var(--table-header) !important;
+  color: white !important;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.tableHeaderSmall {
+  min-width: 100px;
+}
+
+.tableCell {
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.chartContainer {
+  position: relative;
+}
+
+.chartHeight {
+  height: 300px;
+
+}
+
+.noDataOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.noDataIcon {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+}

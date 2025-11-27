@@ -1,0 +1,128 @@
+.dashboard_container {
+  background-color: var(--background-Color1);
+  height: 100%;
+
+}
+
+/* Left column styling */
+.groups {
+  box-shadow: -4px 0 8px -4px rgba(30, 42, 48, 0.2);
+  background: #fff;
+}
+
+/* List container */
+.groupList {
+  height: 79%;
+  background: #f7f8f9;
+}
+
+/* Individual group item container */
+.groupItem {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 20px 20px 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect for group items */
+.groupItem:hover {
+  cursor: context-menu;
+}
+
+/* Styling for the selected group */
+.selected {
+  background-color: #bde5dd;
+}
+
+/* Group header row (contains icons and text) */
+.groupItemHeader {
+  font-size: 14px;
+}
+
+/* Icon styling (used by folder or 'All Dashboards' icon) */
+.folderIcon {
+  margin-right: 0.5rem;
+  color: rgba(40, 56, 64, .5);
+  font-size: 17px
+}
+
+/* Arrow icon styling */
+.arrowIcon {
+  margin: 0 0.5rem;
+  color: #6c757d;
+}
+
+/* Lock icon styling */
+.lockIcon {
+  margin-left: 0.5rem;
+  color: #6c757d;
+}
+
+/* Group name/title */
+.groupTitle {
+  text-transform: uppercase;
+  font-size: 13.68px;
+  letter-spacing: 0.684px;
+}
+
+/* Number of dashboards text */
+.groupCount {
+  margin-left: 0.75rem;
+  font-size: 10.7525px;
+  letter-spacing: 0.684px;
+  text-transform: uppercase;
+  color: rgba(54, 73, 83, .3);
+}
+
+.dashboard_list_item {
+  cursor: pointer;
+  padding: 20px 20px 20px 30px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13.68px;
+  letter-spacing: 0.684px;
+  text-transform: uppercase;
+}
+
+.dashboard_list_item:hover {
+  background-color: #f7f8f9;
+}
+
+.dashboard_name:hover {
+  text-decoration: underline;
+}
+
+.dashboard_list_item:active {
+  background-color: var(--commoncolor);
+}
+
+/* Right column main content styling */
+.main_content {
+  background: #fff;
+  border-left: 1px solid #dde2e4;
+
+}
+
+.dropdownMenu {
+  background-color: #364953 !important;
+  color: #ffffffb3 !important;
+  border-radius: 0 !important;
+  --bs-dropdown-link-color: white !important;
+  font-size: 9.76752px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.684px !important;
+
+}
+
+.dropdownMenu a {
+  font-weight: 600 !important;
+}
+
+.dropdownMenu a:hover {
+  background-color: #455760 !important;
+  color: #fff !important;
+}
+
+.emptyDashboardImage {
+  max-width: 120px;
+
+}

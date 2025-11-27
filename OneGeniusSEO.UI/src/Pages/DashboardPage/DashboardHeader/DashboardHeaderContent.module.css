@@ -1,0 +1,19 @@
+.addSummaryButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.customizeDashboard {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.customizeDashboard:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+.addSummaryButton:hover {
+  background-color: var(--btnhover) ! important;
+  color: var(--colorWhite) ! important;
+}

@@ -1,0 +1,59 @@
+:root {
+  --background-Color1: #f8f9fa;
+  --background-Color2: #f4f8f9;
+  --colordanger: red;
+  --colorWhite: white;
+  --commoncolor: rgb(99, 92, 92);
+  --btnhover: grey;
+  --deletebtn: #e16253;
+  --deletebtnhover: #dc4938;
+  --background-color: grey;
+  --modalbackgroundcolor: #f9fafb;
+  --requiredcolor: #dc3545;
+  --fontLabelClient: #495057;
+  --table-header: #666262;
+  --highlihghtedCell: #eef5f7;
+  --loginpagebtnColor: #2c3f49;
+  --errorColor: #ef4444;
+  --loaderColor: #666262;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+
+
+
+.section {
+  margin-bottom: 15px;
+}
+
+
+
+
+@font-face {
+  font-family: uniformRegular;
+  src: url('../Uniform-Regular.ttf');
+}
+
+.body {
+  font-family: UniformRegular, sans-serif;
+}
+
+
+/* bouncerate description */
+.bounce_rate_header {
+  padding: 1.5em 2.75em;
+  box-shadow: inset 4px 0 8px -4px rgba(30, 42, 48, .2);
+  border-bottom: 1px solid rgba(40, 56, 64, .1);
+  background: #f0f3f4;
+  min-height: 9em;
+}
+
+.bouncerate_title {
+  text-transform: uppercase;
+  font-size: 1.143rem;
+  font-weight: 700;
+}

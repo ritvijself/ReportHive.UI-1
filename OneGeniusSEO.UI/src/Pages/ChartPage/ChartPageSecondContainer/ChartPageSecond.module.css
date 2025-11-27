@@ -1,0 +1,160 @@
+.strip_title {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fab028;
+  padding: 10px 10px;
+  color: black;
+
+}
+
+.device_image {
+  width: 80%;
+}
+.table_header {
+  background-color: var(--table-header) !important;
+  color: white !important;
+  vertical-align: middle;
+  padding: 15px !important;
+  margin-top: 16px;
+  border-radius: 6px,
+}
+.report_title_box {
+  /* border: 1px solid grey; */
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.downloadButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+
+}
+
+.downloadButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+.logo_box img {
+  width: 100%;
+}
+
+.property_name {
+  font-size: 35px;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.content_image {
+  padding-top: 24px;
+  width: 100%;
+  height: 323px;
+}
+
+.organic_heading {
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 10px 10px;
+  color: grey;
+
+}
+
+.organic_heading h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+
+.direct_conversion_heading {
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 10px 10px;
+
+  color: grey;
+
+}
+
+.direct_conversion_heading h4 {
+  font-size: 20px;
+}
+
+.bouncerate_description {
+  border: 1px solid rgb(187, 179, 179);
+  padding: 61px 14px;
+  padding-top: 15px;
+  border-radius: 4px;
+
+}
+
+.bouncerate_description p {
+  line-height: 15px;
+  font-size: 10px;
+  font-weight: 700
+}
+
+
+.table_heading {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.table_heading h4 {
+  font-size: 25px;
+
+}
+
+.table_subheading {
+  font-size: 15px;
+
+}
+
+.banner {
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+  /* padding: 0px 10px 0px 20px; */
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: relative;
+  display: inline-block; */
+}
+
+/* .banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 20px solid #fcb32d;
+} */
+
+.banner_container {
+  /* display: flex;
+  align-items: center; */
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* AG Grid: make non-editable cells look read-only and show subtle vertical column lines */
+.ag-theme-alpine .ag-cell-no-edit {
+  cursor: default !important;
+  background: transparent !important;
+  user-select: text;
+}
+
+/* Ensure header and body vertical separators are visible */
+.ag-theme-alpine .ag-header-cell, .ag-theme-alpine .ag-cell {
+  border-right: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Slightly reduce cell focus outline to avoid looking editable */
+.ag-theme-alpine .ag-cell-focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,90 @@
+.header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tableWrapper {
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.clientName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.clientName:hover {
+  text-decoration: underline;
+}
+
+.clientAddress {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.dateCreated {
+  font-size: 0.8125rem;
+  color: #6c757d;
+}
+
+.dropdownItem {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+
+.selectedClientNote {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 120px;
+}
+
+.addButton {
+  background-color: var(--commoncolor);
+  color: var(--colorWhite);
+}
+
+.addButton:hover {
+  background-color: var(--btnhover);
+  color: var(--colorWhite);
+}
+
+.viewDashboardButton {
+  border: var(--commoncolor) 1px solid;
+  background-color: var(--commoncolor);
+  color: var(--colorWhite);
+
+}
+
+.viewDashboardButton:hover {
+  background-color: var(--btnhover);
+  color: var(--colorWhite);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tableWrapper {
+    font-size: 0.75rem;
+  }
+
+  .clientName {
+    font-size: 0.75rem;
+  }
+
+  .clientAddress,
+  .dateCreated {
+    font-size: 0.625rem;
+  }
+
+  .selectedClientNote {
+    min-width: 100%;
+    margin-top: 0.5rem;
+  }
+}

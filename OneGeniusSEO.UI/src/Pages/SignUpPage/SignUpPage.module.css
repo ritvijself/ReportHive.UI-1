@@ -1,0 +1,326 @@
+/* Sign Up - Calm Slate Mist Theme (matches Home) */
+
+:root {
+  --page-bg-start: #f6f8fc;
+  --page-bg-end: #ffffff;
+  --surface-1: #f8fafc;
+  --surface-2: #f3f6fb;
+  --card-bg: rgba(255, 255, 255, 0.72);
+  --text: #0b1220;
+  --muted: #5b6478;
+  --brand-start: #4f46e5;
+  --brand-end: #7c3aed;
+  --ring: rgba(99, 102, 241, 0.22);
+  --card-border: rgba(15, 23, 42, 0.06);
+  --card-border-2: rgba(15, 23, 42, 0.12);
+}
+
+/* Center the form on the screen */
+.centerWrapper {
+  min-height: calc(100vh - 83px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    radial-gradient(1200px 700px at -10% -20%, #eef2ff 0%, rgba(238, 242, 255, 0) 60%),
+    radial-gradient(1000px 600px at 110% -10%, #faf5ff 0%, rgba(250, 245, 255, 0) 55%),
+    url("https://i.postimg.cc/zXwJyyLq/photo-1596251822183-f0cf75473b67.avif") center/cover no-repeat fixed !important;
+}
+
+.FormBox {
+  backdrop-filter: saturate(170%) blur(14px);
+  -webkit-backdrop-filter: saturate(170%) blur(14px);
+  padding: 32px 34px 26px 34px;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.14);
+  width: 100%;
+  max-width: 480px;
+  animation: fadeUp 700ms ease 40ms both;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.subText {
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 18px;
+  margin-top: -4px;
+  font-weight: 500;
+}
+
+.list {
+  width: 100%;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.list i {
+  padding-right: 21px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  color: #1f2937;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px !important;
+  line-height: 22px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  margin-top: 16px;
+  transition: border-color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.error {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #b91c1c;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(22, 22, 22, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  margin-top: 16px;
+  font-size: 16px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 18px 36px rgba(19, 19, 19, 0.26);
+}
+
+.checkbox {
+  padding-top: 12px;
+}
+
+.checkbox a {
+  color: black;
+}
+
+.logo {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.logoText {
+  text-align: center;
+  color: var(--muted);
+}
+
+.logoText h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.logoText p {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.loginLink {
+  width: 100%;
+  border-top: 1px solid #dfe4ea;
+  padding-top: 16px;
+  margin: 24px 0 0 0;
+  font-size: 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.link:hover {
+  transform: translateY(-1px);
+}
+
+.passwordContainer {
+  position: relative;
+  width: 100%;
+}
+
+.passwordContainer input {
+  padding-right: 40px;
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Social signup buttons */
+.socialBtnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0px 0 24px 0;
+  width: 100%;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: background 0.15s, box-shadow 0.2s;
+}
+
+.socialBtn:hover {
+  background: #f3f6fb;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.10);
+}
+
+.socialIcon {
+  font-size: 20px;
+  color: var(--brand-end);
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  margin-top: -12px;
+  padding: 0 8px;
+}
+
+.backSocial {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.backBtn:hover {
+  color: black;
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .FormBox {
+    padding: 18px;
+    max-width: 98vw;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .SecondBox {
+    max-width: 98vw;
+  }
+}
+
+/* Reveal animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loaderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(246, 248, 252, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  z-index: 10;
+}
+
+.loaderSpinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  background: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader for social buttons */
+.socialLoader {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-top: 3px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  background: none;
+}
+
+/* ...existing code... */

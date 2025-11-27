@@ -1,0 +1,20 @@
+
+.content {
+  line-height: 20px;
+  padding: 14px;
+}
+
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1E2F42;
+}
+
+
+
+.duration {
+  font-size: 13px;
+  color: #1E2F42;
+  font-weight: 500
+}

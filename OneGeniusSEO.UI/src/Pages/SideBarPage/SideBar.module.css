@@ -1,0 +1,62 @@
+/* Sidebar when open */
+.sidebar {
+  background-color: #ffffff;
+  width: 220px;
+  transition: width 0.4s ease;
+  height: 100vh;
+  color: #34495e;
+  border-right: 1px solid #c7ccd1;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+/* Sidebar when closed */
+.sidebarClosed {
+  background-color: #ffffff;
+  width: 60px;
+  transition: width 0.4s ease;
+  height: 100vh;
+  color: #34495e;
+  border-right: 1px solid #c7ccd1;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+/* Sidebar items */
+.sidebarItem {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+  margin: 2px 0px;
+  white-space: nowrap;
+  color: #34495e;
+}
+
+/* Sidebar label */
+.sidebarLabel {
+  font-size: 14px;
+  color: #34495e;
+}
+
+.sidebarItem:hover {
+  background-color: #f5f5f5;
+}
+
+.sidebarItem:focus,
+.sidebarItem:active {
+  background-color: var(--commoncolor);
+}
+
+/* Fix for Icons Always Showing */
+.fixedIcon {
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+  color: #34495e;
+  font-size: 16px;
+}

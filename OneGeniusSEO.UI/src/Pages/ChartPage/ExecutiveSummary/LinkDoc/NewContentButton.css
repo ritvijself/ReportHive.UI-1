@@ -1,0 +1,37 @@
+/* Button ka main container */
+.new-content-container {
+    position: relative; /* Sabse zaroori */
+    display: inline-block;
+}
+
+/* Dropdown Menu ki styling */
+.custom-dropdown-menu {
+    position: absolute; /* Apne container ke hisab se position lega */
+    top: 100%; /* Button ke theek neeche */
+    left: 0;
+    z-index: 1000;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    padding: 0.5rem 0;
+    width: 220px; /* Thoda Bada */
+    margin-top: 5px; /* Button se thoda gap */
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-item svg {
+    flex-shrink: 0;
+}

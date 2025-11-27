@@ -1,0 +1,511 @@
+/* Calm Slate Mist Theme: balanced light, reduced harsh whites, professional look */
+
+:root {
+  --page-bg-start: #f6f8fc;
+  /* mist */
+  --page-bg-end: #ffffff;
+  /* white */
+  --surface-1: #f8fafc;
+  /* slate-50 */
+  --surface-2: #f3f6fb;
+  /* light mist */
+  --card-bg: #ffffff;
+  /* card surface */
+  --text: #0b1220;
+  /* near-black */
+  --muted: #5b6478;
+  /* slate-muted */
+  --brand-start: #4f46e5;
+  /* indigo-600 */
+  --brand-end: #7c3aed;
+  /* violet-600 */
+  --ring: rgba(99, 102, 241, 0.22);
+  --card-border: rgba(15, 23, 42, 0.06);
+  --card-border-2: rgba(15, 23, 42, 0.12);
+}
+
+/* Global background with soft tints, no stark white wall */
+:global(body) {
+  background:
+    radial-gradient(1200px 700px at -10% -20%, #eef2ff 0%, rgba(238, 242, 255, 0) 60%),
+    radial-gradient(1000px 600px at 110% -10%, #faf5ff 0%, rgba(250, 245, 255, 0) 55%),
+    linear-gradient(180deg, var(--page-bg-start), var(--page-bg-end));
+  color: var(--text);
+}
+
+/* Navbar: light glass with subtle blur */
+:global(.navbar) {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: saturate(170%) blur(14px);
+  -webkit-backdrop-filter: saturate(170%) blur(14px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+:global(.navbar .navbar-brand) {
+  letter-spacing: 0.2px;
+  color: var(--text) !important;
+}
+
+:global(.navbar .nav-link) {
+  color: var(--text) !important;
+  opacity: 0.88;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+:global(.navbar .nav-link:hover) {
+  opacity: 1;
+}
+
+.navbarBrand:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbarBrand {
+  color: var(--text);
+}
+
+/* Replace Bootstrap bg-light with a soft, tinted surface */
+:global(.bg-light) {
+  background: linear-gradient(180deg, var(--surface-1), var(--surface-2)) !important;
+}
+
+/* Hero: gentle indigo/violet tint wash to avoid blank white */
+:global(section:first-of-type) {
+  background:
+    radial-gradient(1000px 600px at -10% -20%, #eef2ff 0%, rgba(238, 242, 255, 0) 60%),
+    radial-gradient(900px 520px at 110% 0%, #faf5ff 0%, rgba(250, 245, 255, 0) 55%),
+    linear-gradient(180deg, #ffffff 0%, var(--surface-1) 100%);
+}
+
+/* Patterned hero section for a professional touch */
+.heroSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.06) 0, rgba(124, 58, 237, 0) 40%),
+    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.06) 0, rgba(59, 130, 246, 0) 40%),
+    linear-gradient(180deg, transparent 0, rgba(79, 70, 229, 0.06) 120%);
+  pointer-events: none;
+}
+
+/* Stats bar beneath hero CTA */
+.statsBar {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .statsBar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.statsCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statNumber {
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Marquee for integrations strip */
+.marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.marqueeInner {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: marqueeMove 24s linear infinite;
+  will-change: transform;
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 6px 12px;
+  flex: 0 0 auto;
+}
+
+.marqueeTrack svg {
+  opacity: 0.9;
+}
+
+/* Avoid vertical float animation inside marquee */
+.marquee svg {
+  animation: none !important;
+}
+
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Edge fade overlays for marquee */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--surface-1), rgba(248, 250, 252, 0));
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--surface-1), rgba(248, 250, 252, 0));
+}
+
+/* Vibrant card redesign */
+:global(#features .card),
+:global(#showcase .card),
+:global(#benefits .card) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98)) padding-box,
+    linear-gradient(135deg, rgba(79, 70, 229, 0.35), rgba(124, 58, 237, 0.25)) border-box !important;
+  border: 1px solid #00000040 !important;
+}
+
+:global(#features .card:hover),
+:global(#showcase .card:hover),
+:global(#benefits .card:hover) {
+  transform: translateY(-6px) scale(1.015) !important;
+  box-shadow: 0 22px 50px rgba(23, 23, 23, 0.18), 0 4px 16px rgba(20, 20, 20, 0.12) !important;
+}
+
+/* Icons inside cards as gradient badges */
+:global(#features .card svg.mb-3),
+:global(#showcase .card svg.mb-3) {
+  color: #ffffff !important;
+  background-image: linear-gradient(135deg, black, black);
+  border-radius: 999px;
+  padding: 8px;
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.22);
+}
+
+:global(section h1),
+:global(section h2) {
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+:global(section p.lead),
+:global(.text-muted) {
+  color: var(--muted) !important;
+}
+
+/* Icon strip: light gradient */
+:global(section:nth-of-type(2)) {
+  background: linear-gradient(90deg, #ffffff 0%, var(--surface-1) 100%);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Section spacing
+section {
+  padding: 96px 0;
+} */
+
+/* Cards: clean white with soft edges and subtle lift */
+:global(.card) {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 16px !important;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+:global(.card:hover) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
+  border-color: var(--card-border-2) !important;
+}
+
+:global(.card .card-title) {
+  color: var(--text);
+}
+
+:global(.card .card-text) {
+  color: var(--muted);
+}
+
+/* Ensure icons using text-dark remain visible with our palette */
+:global(.card .text-dark) {
+  color: var(--text) !important;
+}
+
+/* CTA button with calm indigo gradient */
+.signupBtn {
+  font-size: 17px;
+  color: #030303;
+  padding: 10px 22px;
+  border-radius: 12px;
+  background-image: linear-gradient(135deg, rgb(255, 254, 254), rgb(255, 255, 255));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s;
+  font-weight: 700;
+}
+
+.signupBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 18px 36px rgba(99, 102, 241, 0.26);
+}
+
+.signupBtn:active {
+  transform: translateY(0);
+}
+
+/* Footer: keep darker for separation and focus */
+:global(footer.bg-dark) {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 55%, #0b1220 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerLeft p {
+  color: white;
+}
+
+.ctaText {
+  color: white;
+  opacity: 0.95;
+}
+
+.footerRight p {
+  color: white !important;
+}
+
+/* ===== Animations (CSS-only, smooth and subtle) ===== */
+
+/* Keyframes */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: translate(-20%, -20%) scale(1);
+  }
+
+  50% {
+    transform: translate(10%, 0%) scale(1.05);
+  }
+
+  100% {
+    transform: translate(-20%, -20%) scale(1);
+  }
+}
+
+/* Hero content reveal */
+:global(section:first-of-type h1) {
+  animation: fadeUp 700ms ease 40ms both;
+}
+
+:global(section:first-of-type p.lead) {
+  animation: fadeUp 700ms ease 120ms both;
+}
+
+:global(section:first-of-type .btn) {
+  animation: fadeUp 700ms ease 200ms both;
+}
+
+/* Subtle animated glow behind hero card */
+:global(section:first-of-type .card) {
+  position: relative;
+  overflow: visible;
+}
+
+:global(section:first-of-type .card)::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background:
+    radial-gradient(600px 300px at 20% 10%, rgba(124, 58, 237, 0.10), transparent 60%),
+    radial-gradient(500px 300px at 80% 80%, rgba(79, 70, 229, 0.10), transparent 60%);
+  filter: blur(18px);
+  z-index: 0;
+  pointer-events: none;
+  animation: auroraMove 14s ease-in-out infinite;
+}
+
+:global(section:first-of-type .card > *) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating icons in the integrations strip */
+:global(section:nth-of-type(2) svg) {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(1)) {
+  animation-delay: 0s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(2)) {
+  animation-delay: 0.15s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(3)) {
+  animation-delay: 0.3s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(4)) {
+  animation-delay: 0.45s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(5)) {
+  animation-delay: 0.6s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(6)) {
+  animation-delay: 0.75s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(7)) {
+  animation-delay: 0.9s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(8)) {
+  animation-delay: 1.05s;
+}
+
+:global(section:nth-of-type(2) svg:nth-of-type(9)) {
+  animation-delay: 1.2s;
+}
+
+/* Features and Benefits reveal on load (staggered) */
+:global(#features h2) {
+  animation: fadeUp 700ms ease 60ms both;
+}
+
+:global(#features .row > div:nth-of-type(1) .card) {
+  animation: fadeUp 700ms ease 120ms both;
+}
+
+:global(#features .row > div:nth-of-type(2) .card) {
+  animation: fadeUp 700ms ease 200ms both;
+}
+
+:global(#features .row > div:nth-of-type(3) .card) {
+  animation: fadeUp 700ms ease 280ms both;
+}
+
+:global(#benefits h2) {
+  animation: fadeUp 700ms ease 60ms both;
+}
+
+:global(#benefits .row > div:nth-of-type(1) .card) {
+  animation: fadeUp 700ms ease 120ms both;
+}
+
+:global(#benefits .row > div:nth-of-type(2) .card) {
+  animation: fadeUp 700ms ease 180ms both;
+}
+
+:global(#benefits .row > div:nth-of-type(3) .card) {
+  animation: fadeUp 700ms ease 240ms both;
+}
+
+:global(#benefits .row > div:nth-of-type(4) .card) {
+  animation: fadeUp 700ms ease 300ms both;
+}
+
+/* Footer CTA subtle reveal */
+:global(footer .btn) {
+  animation: fadeUp 700ms ease 120ms both;
+}
+
+/* ===== Hover consistency fixes for all cards ===== */
+:global(.card) {
+  will-change: transform, box-shadow;
+}
+
+:global(section .card) {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+:global(.card:hover) {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16) !important;
+  border-color: var(--card-border-2) !important;
+}
+
+/* Ensure border-0 cards still show a subtle border and animate on hover */
+:global(.border-0.card) {
+  border: 1px solid var(--card-border) !important;
+}
+
+:global(.border-0.card:hover) {
+  border-color: var(--card-border-2) !important;
+}
+
+/* Hero card hover parity */
+:global(section:first-of-type .card:hover) {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.20) !important;
+}
+
+/* Subtle title color shift on hover for visual feedback */
+:global(#showcase .card:hover .card-title),
+:global(#features .card:hover .card-title),
+:global(#benefits .card:hover .card-title) {
+  color: black;
+}

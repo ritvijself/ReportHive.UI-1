@@ -1,0 +1,17 @@
+.page_view_data {
+  background-color: #ffff;
+  padding-bottom: 1px;
+}
+
+.page_view_data:hover {
+  box-shadow: 0 0 5px 0 #3649534d;
+}
+
+.page_view_sub_heading {
+
+  color: #2d3e4f;
+}
+
+.path_view_path {
+  padding: 6px !important;
+}

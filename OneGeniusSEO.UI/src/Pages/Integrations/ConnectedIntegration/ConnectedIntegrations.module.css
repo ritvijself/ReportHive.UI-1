@@ -1,0 +1,101 @@
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.connectedList {
+  padding: 0.5rem;
+  overflow-y: auto;
+}
+
+.connectedList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.connectedList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.connectedList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.integrationCard {
+  background-color: #e1dcdc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: var(--bs-border-width) var(--bs-border-style) #020202 !important;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconTitle {
+  display: flex;
+  align-items: center;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crossBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.crossBtn:hover {
+  color: #cc0000;
+}
+
+.integrationIcon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.integrationTitle {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.noResult {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .integrationCard {
+    height: 80px;
+    padding: 0.5rem;
+  }
+
+  .integrationTitle {
+    font-size: 0.85rem;
+  }
+
+  .crossBtn {
+    font-size: 14px;
+  }
+
+  .connectedList {
+    max-height: 400px;
+  }
+}

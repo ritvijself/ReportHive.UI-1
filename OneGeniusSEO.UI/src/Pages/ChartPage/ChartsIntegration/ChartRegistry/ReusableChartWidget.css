@@ -1,0 +1,188 @@
+/* --- Widget General Styles --- */
+.widget-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: grab;
+}
+
+.widget-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.widget-body {
+  padding: 15px;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.widget-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  background-color: #fafafa;
+}
+.widget-comment {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  white-space: pre-wrap;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+.menu-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- Modal Styles --- */
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content {
+  position: static;
+  background: #fff;
+  padding: 0;
+  border-radius: 8px;
+  max-width: 450px;
+  width: 90%;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  flex-grow: 1;
+  text-align: center;
+}
+.close-button, .back-button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #888;
+  padding: 0 5px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.chrome-picker {
+  box-shadow: none !important;
+}
+
+/* Main Menu List */
+.main-menu-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-menu-options li {
+  padding: 15px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+.main-menu-options li:hover {
+  background-color: #f5f5f5;
+}
+.main-menu-options li:last-child {
+  border-bottom: none;
+}
+
+/* Conversion Buttons */
+.conversion-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.modal-button {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.modal-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Comment Form */
+.comment-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+.save-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.color-picker-body {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  padding: 20px;         
+}
+
+.color-picker-body .save-button {
+  width: auto; 
+  min-width: 150px;
+  padding: 10px 20px; 
+  margin-top: 20px; 
+}

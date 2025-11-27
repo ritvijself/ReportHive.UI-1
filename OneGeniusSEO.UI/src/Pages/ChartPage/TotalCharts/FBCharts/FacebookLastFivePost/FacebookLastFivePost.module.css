@@ -1,0 +1,78 @@
+
+.Orgnaic_content_box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0px 16px 16px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.page_view_sub_heading {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.metrics_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.metrics_table caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.metrics_table th,
+.metrics_table td {
+  padding: 5px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  border: 1px solid black;
+}
+
+.metrics_table th {
+  font-weight: 600;
+  background-color: var(--table-header);
+  color: white;
+}
+
+.table_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.rows_per_page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rows_per_page span {
+  font-weight: bold;
+}
+
+.highlightColumn {
+  background-color: var(--highlihghtedCell);
+
+}
+
+.status_success {
+  color: #33cc73;
+  font-weight: bold;
+}
+
+.status_pending {
+  color: #ff9900;
+  font-weight: bold;
+}

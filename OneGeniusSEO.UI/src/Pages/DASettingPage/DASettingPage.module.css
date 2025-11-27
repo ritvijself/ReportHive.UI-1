@@ -1,0 +1,19 @@
+.uploadButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.uploadButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
+
+.saveButton {
+  background-color: var(--commoncolor) !important;
+  color: var(--colorWhite) !important;
+}
+
+.saveButton:hover {
+  background-color: var(--btnhover) !important;
+  color: var(--colorWhite) !important;
+}
