@@ -17,6 +17,7 @@ const InstagramMetricsGrid = ({ insta_Id, startDate, endDate, data }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [metrics, setMetrics] = useState({});
+  const [isHidden, setIsHidden] = useState(false);
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
   const token = localStorage.getItem("token");
@@ -48,6 +49,13 @@ const InstagramMetricsGrid = ({ insta_Id, startDate, endDate, data }) => {
 
       const result = await resp.json();
 
+      // Server-driven hide marker
+      if (result && result.isSuccess === true && (result.data === null) && typeof result.message === "string" && result.message.includes("User wants to hide")) {
+        setIsHidden(true);
+        setLoading(false);
+        return;
+      }
+
       // Expecting an object with keys: followers, posts, likes, comments, impressions, saved, shares, reach
       setMetrics(result || {});
     } catch (err) {
@@ -58,6 +66,8 @@ const InstagramMetricsGrid = ({ insta_Id, startDate, endDate, data }) => {
       setLoading(false);
     }
   };
+
+  if (isHidden) return null;
 
   return (
     <div className={`${style.Orgnaic_content_box} card shadow-sm p-3 mb-3`}>

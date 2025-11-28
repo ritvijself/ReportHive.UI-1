@@ -1175,6 +1175,21 @@ const useDashboardCustomization = (apibaseurl, token) => {
       dataShowType: chart.dataShowType || "chart",
     }));
 
+    // Instagram: support both 'Instagram' and 'instagram' keys
+    const instagramConfig =
+      chartConfigurations["Instagram"] || chartConfigurations["instagram"] || {};
+
+    const instagramApiStatuses = Object.values(instagramConfig).map((chart) => ({
+      apiUniqueName: chart.code,
+      status: chart.selected,
+    }));
+
+    const instagramMonthApiStatuses = Object.values(instagramConfig).map((chart) => ({
+      apiUniqueName: chart.code,
+      status: chart.showComparison,
+      dataShowType: chart.dataShowType || "chart",
+    }));
+
     return {
       gmbApiStatuses,
       gmbMonthApiStatuses,
@@ -1194,6 +1209,9 @@ const useDashboardCustomization = (apibaseurl, token) => {
       shopifyMonthApiStatuses,
       facebookApiStatuses,
       facebookMonthApiStatuses,
+      instagramApiStatuses,
+      instagramMonthApiStatuses,
+
     };
   };
   

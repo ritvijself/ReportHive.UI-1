@@ -17,6 +17,7 @@ const InstagramPostTable = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [isHidden, setIsHidden] = useState(false);
   const [columns] = useState(INSTAGRAM_COLUMNS);
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -52,6 +53,14 @@ const InstagramPostTable = ({
       }
 
       const result = await response.json();
+
+      // Server-driven hide: backend may return this special object
+      if (result && result.isSuccess === true && (result.data === null) && typeof result.message === "string" && result.message.includes("User wants to hide")) {
+        setIsHidden(true);
+        setPosts([]);
+        setLoading(false);
+        return;
+      }
 
       // ----------- FIXED RESPONSE HANDLING -------------
       const rawPosts = Array.isArray(result)
@@ -143,6 +152,8 @@ const InstagramPostTable = ({
       </div>
     );
   }
+
+  if (isHidden) return null;
 
   return (
     <div className={style.Orgnaic_content_box}>

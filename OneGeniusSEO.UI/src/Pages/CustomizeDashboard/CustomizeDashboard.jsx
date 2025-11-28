@@ -83,7 +83,9 @@ const CustomizeDashboard = () => {
       shopifyApiStatuses,
       shopifyMonthApiStatuses,
       facebookApiStatuses,
-      facebookMonthApiStatuses
+      facebookMonthApiStatuses,
+      instagramApiStatuses,
+      instagramMonthApiStatuses
     } = prepareSaveData();
 
     try {
@@ -315,6 +317,32 @@ const CustomizeDashboard = () => {
               Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify(facebookMonthApiStatuses),
+          })
+        );
+      }
+
+      //instagram 
+        if (instagramApiStatuses?.length > 0) {
+        requests.push(
+          fetch(`${apibaseurl}/api/InstagramCustomizeHideApiList/update`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(instagramApiStatuses),
+          })
+        );
+      }
+           if (instagramMonthApiStatuses?.length > 0) {
+        requests.push(
+          fetch(`${apibaseurl}/api/InstagramCustomizeMonthApiList/update`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(instagramMonthApiStatuses),
           })
         );
       }

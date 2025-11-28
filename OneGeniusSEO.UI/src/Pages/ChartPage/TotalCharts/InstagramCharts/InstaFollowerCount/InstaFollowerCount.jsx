@@ -5,6 +5,7 @@ import { FaInfoCircle } from "react-icons/fa";
 
 const InstagramMetricCard = ({ instadata, insta_id, title, metricType }) => {
   const [loading, setLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
   const [metricValue, setMetricValue] = useState(0);
   const [error, setError] = useState(null);
   const token = localStorage.getItem("token");
@@ -66,6 +67,13 @@ const InstagramMetricCard = ({ instadata, insta_id, title, metricType }) => {
         }
 
         const data = await response.json();
+
+        // Server-driven hide marker (same pattern used for GSC/FB)
+        if (data && data.isSuccess === true && (data.data === null) && typeof data.message === "string" && data.message.includes("User wants to hide")) {
+          setIsHidden(true);
+          setLoading(false);
+          return;
+        }
         const { key } = getMetricInfo();
 
         // API may return a primitive number (e.g. 2) or an object (e.g. { totalLikes: 2 }).
@@ -100,6 +108,8 @@ const InstagramMetricCard = ({ instadata, insta_id, title, metricType }) => {
       {description}
     </Tooltip>
   );
+
+  if (isHidden) return null;
 
   if (loading) {
     return (
