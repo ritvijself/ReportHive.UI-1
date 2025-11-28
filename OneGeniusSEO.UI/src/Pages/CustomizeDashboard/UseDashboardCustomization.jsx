@@ -70,6 +70,7 @@ import {
   GetPostsByDateRange as InstagramGetPostsByDateRange,
   GetPostsDetailsByDateRange as InstagramGetPostsDetailsByDateRange,
 } from "../../api/InstagramApis";
+import { object } from "prop-types";
 
 const useDashboardCustomization = (apibaseurl, token) => {
   // GA4 Charts
@@ -1160,6 +1161,19 @@ const useDashboardCustomization = (apibaseurl, token) => {
       status: chart.showComparison,
       dataShowType: chart.dataShowType || "chart",
     }));
+    // Support multiple possible keys for Facebook integration (backend may use 'Facebook' or 'facebook')
+    const facebookConfig =
+      chartConfigurations["Facebook"] || chartConfigurations["facebook"] || {};
+
+    const facebookApiStatuses = Object.values(facebookConfig).map((chart) => ({
+      apiUniqueName: chart.code,
+      status: chart.selected,
+    }));
+
+    const facebookMonthApiStatuses = Object.values(facebookConfig).map((chart) => ({
+      apiUniqueName: chart.code,
+      dataShowType: chart.dataShowType || "chart",
+    }));
 
     return {
       gmbApiStatuses,
@@ -1178,8 +1192,11 @@ const useDashboardCustomization = (apibaseurl, token) => {
       linkedinMonthApiStatuses,
       shopifyApiStatuses,
       shopifyMonthApiStatuses,
+      facebookApiStatuses,
+      facebookMonthApiStatuses,
     };
   };
+  
 
   return {
     integrationOptions,

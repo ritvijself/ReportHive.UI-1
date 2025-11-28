@@ -82,6 +82,8 @@ const CustomizeDashboard = () => {
       linkedinMonthApiStatuses,
       shopifyApiStatuses,
       shopifyMonthApiStatuses,
+      facebookApiStatuses,
+      facebookMonthApiStatuses
     } = prepareSaveData();
 
     try {
@@ -292,6 +294,30 @@ const CustomizeDashboard = () => {
           })
         );
       }
+      if (facebookApiStatuses?.length > 0) {
+        requests.push(
+          fetch(`${apibaseurl}/api/FacebookCustomizeHideApiList/update`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(facebookApiStatuses),
+          })
+        );
+      }
+         if (facebookMonthApiStatuses?.length > 0) {
+        requests.push(
+          fetch(`${apibaseurl}/api/FacebookCustomizeMonthApiList/update`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(facebookMonthApiStatuses),
+          })
+        );
+      }
 
       const responses = await Promise.all(requests);
       const allSuccessful = responses.every((response) => response.ok);
@@ -353,7 +379,7 @@ const CustomizeDashboard = () => {
       file &&
       (file.type === "application/vnd.ms-excel" ||
         file.type ===
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
     ) {
       setSelectedFile(file);
       setExcelUploadMessage("");

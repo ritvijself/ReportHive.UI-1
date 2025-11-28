@@ -8,6 +8,7 @@ ChartJS.register(...registerables);
 
 const LineChartFb = ({ pageId, startDate, endDate, data, title }) => {
   const [loading, setLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [total, setTotal] = useState(0);
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -56,6 +57,13 @@ const LineChartFb = ({ pageId, startDate, endDate, data, title }) => {
         );
 
         const result = await response.json();
+
+        // Server may indicate the API is hidden for the user
+        if (result?.isSuccess === true && result?.data == null && result?.message === "User wants to hide this API") {
+          setIsHidden(true);
+          setLoading(false);
+          return;
+        }
 
         if (result.data?.[0]?.values?.length > 0) {
           const values = result.data[0].values;
@@ -207,6 +215,7 @@ const LineChartFb = ({ pageId, startDate, endDate, data, title }) => {
   };
 
   if (loading) return <Loader />;
+  if (isHidden) return null;
 
   return (
     <div className="card shadow-sm p-3 h-100 mb-4">

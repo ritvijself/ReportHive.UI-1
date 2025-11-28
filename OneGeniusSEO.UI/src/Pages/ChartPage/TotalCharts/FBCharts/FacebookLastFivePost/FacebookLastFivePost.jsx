@@ -8,6 +8,7 @@ const FacebookLastFivePosts = ({ pageId, data, title }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(!!pageId);
   const [error, setError] = useState(null);
+  const [isHidden, setIsHidden] = useState(false);
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
   const token = localStorage.getItem("token");
@@ -45,6 +46,11 @@ const FacebookLastFivePosts = ({ pageId, data, title }) => {
         }
 
         const result = await response.json();
+        if (result?.isSuccess === true && result?.data == null && result?.message === "User wants to hide this API") {
+          setIsHidden(true);
+          setLoading(false);
+          return;
+        }
         setPosts(result.data || []);
       } catch (err) {
         console.error("Error fetching Facebook posts:", err);
@@ -111,6 +117,8 @@ const FacebookLastFivePosts = ({ pageId, data, title }) => {
       </div>
     );
   }
+
+  if (isHidden) return null;
 
   if (error) {
     return (

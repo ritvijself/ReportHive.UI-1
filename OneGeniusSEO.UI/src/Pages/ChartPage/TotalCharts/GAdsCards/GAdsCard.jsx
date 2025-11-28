@@ -16,6 +16,7 @@ const GAdsCard = ({
   const [dynamicValue, setDynamicValue] = useState(0);
   const [dynamicChange, setDynamicChange] = useState(null);
   const [error, setError] = useState(null);
+  const [isHidden, setIsHidden] = useState(false);
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const isDynamic = !!pageId;
@@ -66,6 +67,13 @@ const GAdsCard = ({
 
         const responseData = await response.json();
 
+        // Respect server-side hide flag
+        if (responseData?.isSuccess === true && responseData?.data == null && responseData?.message === "User wants to hide this API") {
+          setIsHidden(true);
+          setLoading(false);
+          return;
+        }
+
         let count = 0;
         if (responseData.fan_count !== undefined)
           count = responseData.fan_count;
@@ -94,6 +102,7 @@ const GAdsCard = ({
     </Tooltip>
   );
 
+  if (isHidden) return null;
   if (loading) return <Loader small />;
 
   return (
