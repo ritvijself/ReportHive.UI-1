@@ -124,7 +124,13 @@ const useDashboardCustomization = (apibaseurl, token) => {
     ...SearchClicksGsc,
     ...PerformanceByDevices,
     ...SecurityCheckApi,
-  ].map((item) => ({ id: item.id, title: item.title, code: item.code }));
+  ].map((item) => ({
+     id: item.id,
+     title:
+     item.code === SearchClicksGscOneMonth[0]?.code
+     ? "GSC Highlights (Prev Month & Prev Year)"
+      : item.title, 
+     code: item.code }));
 
   // Google Ads Charts
   const googleAdsCharts = [...ClicksConversionCost].map((item) => ({

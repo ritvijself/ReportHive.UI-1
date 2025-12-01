@@ -11,6 +11,7 @@ import MetricSquareBox from "../../TotalCharts/MetricSquareBoxGSC/MetricSquareBo
 import ProgressBar from "../../TotalCharts/ProgressBar/ProgressBar";
 import ChartGAds from "../ChartGAds/ChartGAds";
 import KeywordPositionTable from "../../TotalCharts/DeviceTable/KeywordPositionTable";
+import useDashboardCustomization from "../../../CustomizeDashboard/UseDashboardCustomization";
 
 const GoogleConsoleCharts = ({
   propertyid,
@@ -30,6 +31,22 @@ const GoogleConsoleCharts = ({
   Top5SearchQueries,
   Top5Pages,
 }) => {
+
+const apibaseurl = import.meta.env.VITE_API_BASE_URL;
+const token = localStorage.getItem("token");
+
+const { chartConfigurations } = useDashboardCustomization(apibaseurl, token);
+
+const gscConfig = chartConfigurations?.["Google Search Console"] || {};
+
+const metricCode = SearchClicksGscOneMonth?.[0]?.code;
+
+const showMetricComparison =
+  metricCode && gscConfig[metricCode]
+    ? gscConfig[metricCode].showComparison
+    : false;
+
+
   return (
     <>
       {/* GSC Charts */}
@@ -80,6 +97,7 @@ const GoogleConsoleCharts = ({
             endDate={endDate}
             title={SearchClicksGscOneMonth[0].title}
             siteUrl={siteUrl}
+            showComparison={showMetricComparison}
           />
         </Col>
       </Row>

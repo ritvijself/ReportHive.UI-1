@@ -69,14 +69,25 @@ const ChartInstagram = ({
       mounted = false;
     };
   }, []);
+
+  const allItems = [
+  ...TotalFollowers.map(codeFor),
+  codeFor(GetPostsDetailsByDateRange?.[0]),
+  codeFor(GetPostsByDateRange?.[0])
+].filter(Boolean);
+
+const allHidden = allItems.every((code) => hiddenCodes.has(code));
+
   return (
     <>
-      <div className={`text-center mt-5 `}>
-        {" "}
-        <h4 className="mb-4 fw-bold" style={{ fontSize: "35px" }}>
-          Instagram Report
-        </h4>{" "}
-      </div>
+     {!allHidden && (
+  <div className="text-center mt-5">
+    <h4 className="mb-4 fw-bold" style={{ fontSize: "35px" }}>
+      Instagram Report
+    </h4>{" "}
+  </div>
+)}
+
       {/* 
       Static Charts */}
       <Row>

@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { formatDateLocal } from "../../../../utils/FormatDate";
 import styles from "./MetricSquareBox.module.css";
 
-const MetricSquareBox = ({ siteUrl, startDate, endDate, SquareBox }) => {
+const MetricSquareBox = ({ siteUrl, startDate, endDate, SquareBox, showComparison = true, }) => {
   const [metricData, setMetricData] = useState(null);
   const [loading, setLoading] = useState(true);
   const apibaseurl = import.meta.env.VITE_API_BASE_URL;
@@ -224,24 +224,29 @@ const MetricSquareBox = ({ siteUrl, startDate, endDate, SquareBox }) => {
                   {item.formatValue(metric.current)}
                 </div>
 
-                {/* Comparison Data */}
-                <div className="mt-2">
-                  {/* Previous Month Comparison */}
-                  <div className="d-flex justify-content-between align-items-center mb-1" style={{ fontSize: '14px' }}>
-                    <small className="text-muted">Prev Month:</small>
-                    <small className={getTrendClass(metric.changeFromPreviousMonth, item.key)}>
-                      {getTrendIcon(metric.changeFromPreviousMonth)} {formatPercentage(metric.changeFromPreviousMonth)}%
-                    </small>
-                  </div>
+                {/* Comparison Data */}             
+{!showComparison && (
+  <div className="mt-2">
+    {/* Previous Month Comparison */}
+    <div className="d-flex justify-content-between align-items-center mb-1" style={{ fontSize: '14px' }}>
+      <small className="text-muted">Prev Month:</small>
+      <small className={getTrendClass(metric.changeFromPreviousMonth, item.key)}>
+      {getTrendIcon(metric.prevMonth || metric.changeFromPreviousMonth)}{" "}
+{formatPercentage(metric.prevMonth || metric.changeFromPreviousMonth)}%
 
-                  {/* Previous Year Comparison */}
-                  <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '14px' }}>
-                    <small className="text-muted">Prev Year:</small>
-                    <small className={getTrendClass(metric.changeFromPreviousYear, item.key)}>
-                      {getTrendIcon(metric.changeFromPreviousYear)} {formatPercentage(metric.changeFromPreviousYear)}%
-                    </small>
-                  </div>
-                </div>
+      </small>
+    </div>
+
+    {/* Previous Year Comparison */}
+    <div className="d-flex justify-content-between align-items-center" style={{ fontSize: '14px' }}>
+      <small className="text-muted">Prev Year:</small>
+      <small className={getTrendClass(metric.changeFromPreviousYear, item.key)}>
+           {getTrendIcon(metric.prevYear || metric.changeFromPreviousYear)}{" "}
+        {formatPercentage(metric.prevYear || metric.changeFromPreviousYear)}%
+      </small>
+    </div>
+  </div>
+)}           
               </div>
             </div>
           </div>

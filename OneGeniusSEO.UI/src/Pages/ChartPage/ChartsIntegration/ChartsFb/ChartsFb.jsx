@@ -78,14 +78,27 @@ const ChartsFb = ({
       mounted = false;
     };
   }, []);
+
+
+  const allItems = [
+  codeFor(totalPageLikes?.[0]),
+  codeFor(totalFollowers?.[0]),
+  codeFor(totalPost_Like_cmnt_share?.[0]),
+  codeFor(TopFivePost?.[0]),
+  ...FacebookUniqueImpressionApi.map(codeFor)
+].filter(Boolean);
+
+const allHidden = allItems.every((code) => hiddenCodes.has(code));
+
   return (
     <>
-      <div className={`text-center mt-5 `}>
-        {" "}
-        <h4 className="mb-4 fw-bold" style={{ fontSize: "35px" }}>
-          Facebook Insights Reports
-        </h4>{" "}
-      </div>
+     {!allHidden && (
+  <div className="text-center mt-5">
+    <h4 className="mb-4 fw-bold" style={{ fontSize: "35px" }}>
+      Facebook Insights Reports
+    </h4>{" "}
+  </div>
+)}
       {/* Post likes and comments share  */}
       <Row>
         {Array.isArray(totalPageLikes) && codeFor(totalPageLikes[0]) && !hiddenCodes.has(codeFor(totalPageLikes[0])) && (
